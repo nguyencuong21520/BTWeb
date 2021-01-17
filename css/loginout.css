@@ -1,0 +1,25 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: #5E5C7F !important;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sign_wrap{
+    background-color: whitesmoke;
+    padding: 30px 20px 20px 20px;
+    border-radius: 10px;
+}
+.error{
+    color: red;
+}
+.space-40{
+    height: 40px;
+}
