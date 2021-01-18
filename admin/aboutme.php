@@ -31,7 +31,8 @@ if (isset($_POST['submitt'])) {
         $targetcv = "../cv/".basename($cv);
         $sql = "UPDATE aboutme SET name='$name',img='$image',description='$description',shortInfo='$shortInfo',cv='$cv' where id=1 ";
         mysqli_query($conn, $sql);
-        if (move_uploaded_file($_FILES['image']['tmp_name'], $target) || move_uploaded_file($_FILES['cv']['tmp_name'], $targetcv)) {
+        move_uploaded_file($_FILES['cv']['tmp_name'], $targetcv);
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
             $msg = "success";
         }else{
             $msg = "error";
@@ -60,11 +61,11 @@ if (isset($_POST['submitt'])) {
                                 <i class="fa fa-code" aria-hidden="true"></i><span class="hide-menu">Kỹ Năng</span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="experience.php" >
+                                href="education.php" >
                                 <i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Giáo Dục</span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="education.php" >
+                                href="experience.php" >
                                 <i class="fa fa-file-user" aria-hidden="true"></i><span class="hide-menu">Kinh Nghiệm </span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
@@ -142,7 +143,7 @@ include("footer.php");
 if(status == 'success'){
     sweetAlert('success','Cập nhập thành công')
 }else if(status != ''){
-    sweetAlert('error','Cập nhập thất bại')
+    sweetAlert('warning','Không có gì thay đổi')
 }
 </script>
 </body>

@@ -118,8 +118,7 @@ $list = mysqli_fetch_all($result);
                                                       <span>$d[5]</span>
                                                     </div>
                                                     <div class='modal-footer'>
-                                                      <button type='button' class='btn btn-secondary' data-dismiss='modal' aria-label='Close'>Hủy</button>
-                                                      <button type='button' class='btn btn-danger color-white'><a href='delete.php?id=$d[0]&tableName=feedback'>Xóa</a></button>
+                                                      <button type='button' class='btn btn-secondary' data-dismiss='modal' aria-label='Close'>Xong</button>
                                                     </div>
                                                   </div>
                                                 </div>

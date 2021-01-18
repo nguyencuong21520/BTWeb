@@ -6,6 +6,9 @@
         if(mysqli_query($conn,$sql)){
             $status = "success";
             $response = "Cập nhập thành công";
+        }else{
+            $status = "error";
+            $response = "Cập nhập Thất Bại";
         }
         exit(json_encode(array("status" => $status, "response" => $response)));
 ?>

@@ -64,6 +64,7 @@
     object-fit: cover;
     margin-bottom: 10px;
         }
+
     </style>
 </head>
 

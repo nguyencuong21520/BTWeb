@@ -2,6 +2,12 @@
     require("./getData/getDataAboutme.php");
     require("./getData/getDataSocial.php");
     require("./getData/getDataSkill.php");
+    require("./getData/getDataEducation.php");
+    require("./getData/getDataExperience.php");
+    require("./getData/getDataPetproject.php");
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -364,43 +370,23 @@
                         <!-- timeline wrapper -->
                         <div class="timeline edu bg-white rounded shadow-dark padding-30 overflow-hidden">
 
-                            <!-- timeline item -->
-                            <div class="timeline-container wow fadeInUp">
-                                <div class="content">
-                                    <span class="time">08/2018 - Nay</span>
-                                    <h3 class="title">Sinh viên đại học Thủy Lợi</h3>
-                                    <p>Chuyên ngành công nghệ thông tin
-                                    </p>
+                            <?php
+                            $couEdu = 0;
+                                foreach($dataEducation as $d){
+                                    echo "
+                                    <div class='timeline-container wow fadeInUp' data-wow-delay='0.'$couEdu's'>
+                                    <div class='content'>
+                                        <span class='time'>$d[1]</span>
+                                        <h3 class='title'>$d[2]</h3>
+                                        <p>$d[3]
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
+                                    ";
+                                    $couEdu += 1.5;
+                                }
+                            ?>
 
-                            <!-- timeline item -->
-                            <div class="timeline-container wow fadeInUp" data-wow-delay="0.2s">
-                                <div class="content">
-                                    <span class="time">11/2019 - 05/2020</span>
-                                    <h3 class="title">MINDX-TECHNOLOGY & SCHOOL</h3>
-                                    <p>Khóa học lập trình Website
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- timeline item -->
-                            <div class="timeline-container wow fadeInUp" data-wow-delay="0.4s">
-                                <div class="content">
-                                    <span class="time">10/2018 - 12/2018</span>
-                                    <h3 class="title">Zent Code</h3>
-                                    <p>Khóa học giải thuật C và C++
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="timeline-container wow fadeInUp" data-wow-delay="0.4s">
-                                <div class="content">
-                                    <span class="time">04/2018 - 12/2018</span>
-                                    <h3 class="title">Excel English Scholl</h3>
-                                    <p>Chương trình học IELTS Buffet Premium
-                                    </p>
-                                </div>
-                            </div>
 
                             <!-- main line -->
                             <span class="line"></span>
@@ -417,28 +403,25 @@
                         <!-- timeline wrapper -->
                         <div class="timeline exp bg-white rounded shadow-dark padding-30 overflow-hidden">
 
+
+
                             <!-- timeline item -->
-                            <div class="timeline-container wow fadeInUp">
-                                <div class="content">
-                                    <span class="time">07/2020 - Nay</span>
-                                    <h3 class="title">MINDX-TECHNOLOGY & SCHOOL</h3>
-                                    <p>Part time Team teaching LEADER
-                                    </p>
+                            <?php
+                            $couEx = 0;
+                                foreach($dataExperience as $d){
+                                    echo "
+                                    <div class='timeline-container wow fadeInUp' data-wow-delay='0.'$couEx's'>
+                                    <div class='content'>
+                                        <span class='time'>$d[1]</span>
+                                        <h3 class='title'>$d[2]</h3>
+                                        <p>$d[3]
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <!-- timeline item -->
-                            <div class="timeline-container wow fadeInUp" data-wow-delay="0.2s">
-                                <div class="content">
-                                    <span class="time">06/2020 - Nay</span>
-                                    <h3 class="title">MINDX-TECHNOLOGY & SCHOOL</h3>
-                                    <p>Giảng viên dạy lập trình cho học sinh ở các độ tuổi kid và teen.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- timeline item -->
-
+                                    ";
+                                    $couEx += 1.5;
+                                }
+                            ?> 
 
                             <!-- main line -->
                             <span class="line"></span>
@@ -463,167 +446,45 @@
 
                 <div class="spacer" data-height="40"></div>
 
-                <!-- portfolio filter (desktop) -->
-
-
-                <!-- portfolio filter (mobile) -->
-
-                <!-- <ul class="portfolio-filter list-inline wow fadeInUp">
-                    <li class="current list-inline-item" data-filter="*">Everything</li>
-                </ul> -->
                 <h4 class="wow fadeInUp">Các pet project mà mình đã làm</h4>
                 <!-- portolio wrapper -->
                 <div class="row portfolio-wrapper">
-
-                    <!-- portfolio item -->
-                    <div class="col-md-4 col-sm-6 grid-item creative design wow fadeInUp">
-                        <a href="#small-dialog" class="work-content">
-                            <div class="portfolio-item rounded shadow-dark">
-                                <div class="details">
-                                    <span class="term">Website</span>
-                                    <h4 class="title">Where to go</h4>
-                                    <p>Trang web về du lịch</p>
-                                    <span class="more-button"><i class="icon-options"></i></span>
+                <?php
+                            $couPro = 0;
+                                foreach($dataPetproject as $d){
+                                    echo "
+                                    <div class='col-md-4 col-sm-6 grid-item creative design wow fadeInUp' data-wow-delay='0.'$couPro's'>
+                                    <a href='#small-dialog$d[0]' class='work-content'>
+                                        <div class='portfolio-item rounded shadow-dark'>
+                                            <div class='details'>
+                                                <span class='term'>$d[2]</span>
+                                                <h4 class='title'>$d[3]</h4>
+                                                <p>$d[4]</p>
+                                                <span class='more-button'><i class='icon-options'></i></span>
+                                            </div>
+                                            <div class='thumb'>
+                                                <img src='./img/$d[1]' alt='' />
+                                                <div class='mask'></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div id='small-dialog$d[0]' class='white-popup zoom-anim-dialog mfp-hide'>
+                                        <img src='./img/$d[1]' alt='Title' />
+                                        <h2>$d[3]</h2>
+                                        <p>$d[5]</p>
+            
+                                        <a href='$d[6]' class='btn btn-default'>Truy Cập $d[3]</a>
+                                    </div>
                                 </div>
-                                <div class="thumb">
-                                    <img src="./img/wtg.png" alt="Trang web du lịhc" />
-                                    <div class="mask"></div>
-                                </div>
-                            </div>
-                        </a>
-                        <div id="small-dialog" class="white-popup zoom-anim-dialog mfp-hide">
-                            <img src="./img/wtg.png" alt="Title" />
-                            <h2>Where to goo</h2>
-                            <p>Đây là một trang web về du lịch giúp mọi người có thể truy cập và chia sẽ những địa điểm
-                                du lịch, ăn chơi
-                                .Trang web cũng sẽ tổng hợp những địa điểm mà mọi người chia sẽ và đưa ra các gợi ý cho
-                                mọi người về địa điểm mới
-                            </p>
-                            <p>Trang web được xây dựng bằng HTML, CSS, JS, Bootstrap, Firebase
-                            </p>
-                            <a href="https://wheretogoo.github.io/" class="btn btn-default">Truy Cập Where to go</a>
-                        </div>
-                    </div>
-
-                    <!-- div -->
-                    <div class="col-md-4 col-sm-6 grid-item creative design wow fadeInUp">
-                        <a href="#small-dialog2" class="work-content">
-                            <div class="portfolio-item rounded shadow-dark">
-                                <div class="details">
-                                    <span class="term">Website</span>
-                                    <h4 class="title">Eat What</h4>
-                                    <p>Trang web ẩm thực</p>
-                                    <span class="more-button"><i class="icon-options"></i></span>
-                                </div>
-                                <div class="thumb">
-                                    <img src="./img/ew.png" alt="Trang web ẩm thực" />
-                                    <div class="mask"></div>
-                                </div>
-                            </div>
-                        </a>
-                        <div id="small-dialog2" class="white-popup zoom-anim-dialog mfp-hide">
-                            <img src="./img/ew.png" alt="Title" />
-                            <h2>Eat What</h2>
-                            <p>Đây là một trang web về du lịch giúp mọi người có thể truy cập và chia sẽ những địa điểm
-                                du lịch, ăn chơi
-                                .Trang web cũng sẽ tổng hợp những địa điểm mà mọi người chia sẽ và đưa ra các gợi ý cho
-                                mọi người về địa điểm mới
-                            </p>
-                            <p>Trang web được xây dựng bằng HTML, CSS, JS Vanilla
-                            </p>
-
-                            <a href="https://cuong-project1.herokuapp.com/" class="btn btn-default">Truy Cập Eat
-                                What</a>
-                        </div>
-                    </div>
-
-                    <!-- MindX-GPA -->
-                    <div class="col-md-4 col-sm-6 grid-item creative design wow fadeInUp">
-                        <a href="#small-dialog3" class="work-content">
-                            <div class="portfolio-item rounded shadow-dark">
-                                <div class="details">
-                                    <span class="term">Website</span>
-                                    <h4 class="title">Quizz</h4>
-                                    <p>Trang web trả lời câu hỏi tính điểm</p>
-                                    <span class="more-button"><i class="icon-options"></i></span>
-                                </div>
-                                <div class="thumb">
-                                    <img src="./img/gpa.png" alt="Trang web quizz" />
-                                    <div class="mask"></div>
-                                </div>
-                            </div>
-                        </a>
-                        <div id="small-dialog3" class="white-popup zoom-anim-dialog mfp-hide">
-                            <img src="./img/gpa.png" alt="Title" />
-                            <h2>Quizz</h2>
-                            <p>Đây là một trang web về du lịch giúp mọi người có thể truy cập và chia sẽ những địa điểm
-                                du lịch, ăn chơi
-                                .Trang web cũng sẽ tổng hợp những địa điểm mà mọi người chia sẽ và đưa ra các gợi ý cho
-                                mọi người về địa điểm mới
-                            </p>
-                            <p>Trang web được xây dựng bằng HTML, CSS, JS Vanilla, jQuery
-                            </p>
-
-                            <a href="https://mindx-gpa.herokuapp.com/" class="btn btn-default">Truy Cập Quizz</a>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-4 col-sm-6 grid-item creative design wow fadeInUp" data-wow-delay="0.3s">
-
-                        <div class="portfolio-item rounded shadow-dark">
-                            <div class="details">
-                                <span class="term">C#, Winform</span>
-                                <h4 class="title">Oder Food</h4>
-                                <p>Phần mền quản lý bán hàng</p>
-                                <span class="more-button"><i class="icon-link"></i></span>
-                            </div>
-                            <div class="thumb">
-                                <img src="./img/pos.png" alt="Pos" />
-                                <div class="mask"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-4 col-sm-6 grid-item creative design wow fadeInUp" data-wow-delay="0.3s">
-
-                        <div class="portfolio-item rounded shadow-dark">
-                            <div class="details">
-                                <span class="term">Love</span>
-                                <h4 class="title">My Love</h4>
-                                <p></p>
-                                <span class="more-button"><i class="icon-link"></i></span>
-                            </div>
-                            <div class="thumb">
-                                <img src="./img/love.png" alt="Pos" />
-                                <div class="mask"></div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <!-- portfolio item -->
-
-
-                    <!-- portfolio item -->
-
-
-                    <!-- portfolio item -->
-
-
-                    <!-- portfolio item -->
-
-
-                    <!-- portfolio item -->
+                                    ";
+                                    $couPro += 1.5;
+                                }
+                            ?>
 
 
                 </div>
-
-                <!-- more button -->
                 <div class="load-more text-center mt-4">
                     <a href="javascript:" class="btn btn-default"><i class="fas fa-spinner"></i> Tải thêm</a>
-                    <!-- numbered pagination (hidden for infinite scroll) -->
                     <ul class="portfolio-pagination list-inline d-none">
                         <li class="list-inline-item">1</li>
                         <li class="list-inline-item"><a href="#">1</a></li>
@@ -633,16 +494,6 @@
             </div>
 
         </section>
-
-        <!-- section prices -->
-
-
-        <!-- section testimonials -->
-
-
-        <!-- section blog -->
-
-        <!-- section contact -->
         <section id="contact">
 
             <div class="container">

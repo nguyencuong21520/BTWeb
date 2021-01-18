@@ -34,11 +34,11 @@ $numm = 0;
                                 <i class="fa fa-code" aria-hidden="true"></i><span class="hide-menu">Kỹ Năng</span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="experience.php" >
+                                href="education.php" >
                                 <i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Giáo Dục</span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="education.php" >
+                                href="experience.php" >
                                 <i class="fa fa-file-user" aria-hidden="true"></i><span class="hide-menu">Kinh Nghiệm </span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
@@ -240,7 +240,7 @@ $.ajax({
     success: function (data) {
         sweetAlert(data.status,data.response);
 
-        setTimeout(function(){ window.location.href = 'social.php'; }, 2000);
+        setTimeout(function(){ window.location.href = 'social.php'; }, 3000);
         
     }
 });
@@ -275,7 +275,7 @@ $.ajax({
     success: function (data) {
         sweetAlert(data.status,data.response);
 
-        setTimeout(function(){ window.location.href = 'social.php'; }, 2000);
+        setTimeout(function(){ window.location.href = 'social.php'; }, 3000);
         
     }
 });

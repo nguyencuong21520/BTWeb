@@ -3,11 +3,10 @@
 
         $id = $_POST['id'];
         $name = $_POST['name'];
-        $pass = $_POST['pass'];
-        $role = $_POST['role'];
-
+        $des = $_POST['des'];
+        $time = $_POST['time'];
         require("../config.php");
-        $sql = "UPDATE users SET name='$name',password='$pass',permission='$role' where id='$id' ";
+        $sql = "UPDATE experience SET title='$name', des='$des',time='$time' where id='$id' ";
         if(mysqli_query($conn,$sql)){
             $status = "success";
             $response = "Cập nhập thành công";
