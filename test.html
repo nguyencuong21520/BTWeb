@@ -2,66 +2,67 @@
 <html lang='en'>
 
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Document</title>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>
+  <!-- Latest compiled and minified CSS -->
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>
 
-    <!-- jQuery library -->
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <!-- jQuery library -->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>
+  <!-- Latest compiled JavaScript -->
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>
 
 </head>
 
 <body>
 
-<!-- Button trigger modal -->
-<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModalCenter'>
-    Launch demo modal
-  </button>
-  
-  <!-- Modal -->
-  <div class='modal fade' id='exampleModalCenter' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
-    <div class='modal-dialog modal-dialog-centered' role='document'>
-      <div class='modal-content'>
-        <div class='modal-header'>
-          <h5 class='modal-title' id='exampleModalLongTitle'>Modal title</h5>
-          <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-            <span aria-hidden='true'>&times;</span>
-          </button>
+  <!-- Button trigger modal -->
+  <div class='container'>
+    <form id='about-me'>
+      <div class='form-row align-items-center'>
+        <div class='col-md-4'>
+          <div class='form-group'>
+            <label for='anh'>Chọn Ảnh</label>
+            <input type='file' name='pic' class='form-control-file' id='anh'>
+          </div>
+          <div class='form-group'>
+            <label for='ten'>Họ và Tên</label>
+            <input type='text' name='name' class='form-control' id='ten'>
+          </div>
+          <div class='form-group'>
+            <label for='sdes'>Miêu tả ngắn gọn</label>
+            <input type='text' name='shortDes' class='form-control' id='sdes'>
+          </div>
+
         </div>
-        <div class='modal-body'>
-            <div class='form-group'>
-                <label for='ID'>ID</label>
-                <input  class='form-control' id='ID' name='id' value = '<?php echo $id ?>' >
-              </div>
-              <div class='form-group'>
-                <label for='ID'>ID</label>
-                <input  class='form-control' id='ID' name='id' value = '<?php echo $id ?>' >
-              </div>
-              <div class='form-group'>
-                <label for='ID'>ID</label>
-                <div class='name-container'>
-                    <select name='ten' class='custom-select'>
-                        <option value='Linh'>Linh</option>
-                        <option value='Cường'>Cường</option>
-                        <option value='Tú Anh'>Tú Anh</option>
-                        <option value='Ngọc Anh'>Ngọc Anh</option>
-                        <option value='Nhi'>Nhi</option>
-                        <option value='Hương'>Hương</option>
-                    </select>
-                </div>
-              </div>
+        <div class='col-md-8'>
+          <div class='form-group'>
+            <label for='cv'>Chọn file CV</label>
+            <input type='file' name='cv' class='form-control-file' id='cv'>
+          </div>
+          <div class='form-group'>
+            <label for='des'>Miêu tả về bản thân</label>
+            <textarea name='des' class='form-control' id='des' rows='3'></textarea>
+          </div>
+          <button type='submit' class='btn btn-primary'>Sign in</button>
         </div>
       </div>
-    </div>
+
+    </form>
+
   </div>
 
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <!-- <script>
+    $('#about-me').submit( e =>{
+      e.preventDefault()
+      console.log($('#about-me')[0].name.value)
+    })
+  </script> -->
 </body>
 
 </html>

@@ -99,7 +99,7 @@
                 <!-- intro -->
                 <div class="intro">
                     <!-- avatar image -->
-                    <img src="./img/bg_test.png" alt="Avatar of NgX Cuong" class="mb-4" />
+                    <img src="./img/<?php echo $dataAboutMe['img']?>" alt="Avatar of NgX Cuong" class="mb-4" />
 
                     <!-- info -->
                     <h1 class="mb-2 mt-0"><?php echo $dataAboutMe['name']?></h1>
@@ -216,7 +216,7 @@
                     <div class="col-md-3">
                         <div class="text-center text-md-left">
                             <!-- avatar image -->
-                            <img id="avatar" src="./img/bg_test.png" alt="Avatar of NgX Cuong" />
+                            <img id="avatar" src="./img/<?php echo $dataAboutMe['img']?>" alt="Avatar of NgX Cuong" />
                         </div>
                         <div class="spacer d-md-none d-lg-none" data-height="30"></div>
                     </div>
@@ -231,7 +231,7 @@
                                     <div class="mt-3">
                                         <!-- <form action="./cuongcv.pdf" method="get">
                                             <button type="submit" class="btn btn-default">Tải về CV</button></form> -->
-                                        <a href="./cuongcv.pdf" class="btn btn-default">Tải về CV</a>
+                                        <a href="./cv/<?php echo $dataAboutMe['cv']?>" class="btn btn-default">Tải về CV</a>
                                     </div>
                                     <div class="spacer d-md-none d-lg-none" data-height="30"></div>
                                 </div>

@@ -50,11 +50,19 @@
             color: white !important;
         }
         td i{
-            margin: 0px 5px
+            margin: 0px 7px
         }
         .borderr{
             border-left: 5px solid #F33155;
 
+        }
+        .img-av{
+            height: 150px;
+    width: 150px;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
         }
     </style>
 </head>
@@ -75,7 +83,7 @@
                 <div class="navbar-collapse collapse" data-navbarbg="skin5">
                     <ul class="navbar-nav ml-auto d-flex align-items-center">
                         <li>
-                            <span class="text-white font-medium"><?php echo $currentUserName ?></span>
+                            <span class="text-white font-medium">Xin Chào, <?php echo $currentUserName ?></span>
                         </li>
                         <li class="log-out">
                            <a href="../logout.php"> <span class="text-white">Đăng Xuất</span></a>

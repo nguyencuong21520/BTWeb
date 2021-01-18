@@ -17,13 +17,33 @@ $list = mysqli_fetch_all($result);
             <div class="scroll-sidebar">
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="sidebar-item "> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                    <li class="sidebar-item "> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="users.php" >
                                 <i class="fa fa-user" aria-hidden="true"></i><span class="hide-menu">Admin</span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="aboutme.php" >
                                 <i class="fa fa-info" aria-hidden="true"></i><span class="hide-menu">Giới Thiệu</span></a>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="social.php" >
+                                <i class="fa fa-globe" aria-hidden="true"></i><span class="hide-menu">Mạng Xã Hội</span></a>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="skill.php" >
+                                <i class="fa fa-code" aria-hidden="true"></i><span class="hide-menu">Kỹ Năng</span></a>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="experience.php" >
+                                <i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="hide-menu">Giáo Dục</span></a>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="education.php" >
+                                <i class="fa fa-file-user" aria-hidden="true"></i><span class="hide-menu">Kinh Nghiệm </span></a>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="petproject.php" >
+                                <i class="fa fa-browser" aria-hidden="true"></i><span class="hide-menu">Sản Phẩm</span></a>
                         </li>
                         <li class="sidebar-item borderr"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="feedback.php" >
@@ -130,40 +150,7 @@ $list = mysqli_fetch_all($result);
 <?php
 include("footer.php");
 ?>
-<script>
-  $('#form-edit').on('submit', function (e) {
-            e.preventDefault()
-            let currentRole = '<?php echo $currentRole ?>'
 
-            if(currentRole == '1'){
-              
-              let id = $('#ided').val();
-              let name = $('#nameed').val();
-              let password = $('#passed').val();
-              let role = $('#roleed').val();
-           $.ajax({
-                url: './editUsers.php',
-                method: 'POST',
-                dataType: 'json',
-                data: {
-                    name: name,
-                    id: id,
-                    pass: password,
-                    role: role,
-                },
-                success: function (data) {
-                    sweetAlert(data.status,data.response);
-                }
-            });
-            return false;
-
-            }else{
-              alert("Bạn cần quyền admin để thực hiện")
-            }
-
-  })
-    
-</script>
 </body>
 
 </html>

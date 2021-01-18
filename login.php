@@ -17,6 +17,7 @@ include('loginProcess.php');
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/loginout.css">
 
@@ -26,6 +27,7 @@ include('loginProcess.php');
 <div class="container">
 
     <div class="col-md-4 col-sm-6 sign_wrap">
+    <a href="./index.php"><h2 style="text-align:center"><i class="fas fa-home-lg-alt"></i></h2></a>
         <h1>Đăng Nhập</h1>
         <div class="space-40"></div>
         <form action="" method="post">
@@ -40,7 +42,7 @@ include('loginProcess.php');
             </div>
             <p class="error"><?php echo $error; ?></p>
             <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-            <input name="submit" class="btn btn-primary" type="submit" value=" Login ">
+            <input name="submit" class="btn btn-primary" type="submit" value=" Đăng Nhập ">
             <div class="space-40"></div>
             <p>Bạn chưa có tài khoản? <a href="register.php">Đăng kí</a></p>
         </form>

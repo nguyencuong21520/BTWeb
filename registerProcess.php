@@ -19,7 +19,8 @@ if(mysqli_num_rows($sql)>0)
 {
     $error = "Email đã tồn tại";
 }
-if($password < 6){
+$passwordn = strlen($password);
+if($passwordn < 6){
     $error = "Mật khẩu phải lớn hơn 6 kí tự";
 }
 if($password != $cfpassword){
